@@ -1,4 +1,3 @@
-
 import { ScriptLine } from '../components/Script';
 
 export interface ScriptData {
@@ -13,7 +12,7 @@ export interface ScriptData {
 export const scriptData: ScriptData[] = [
   {
     id: 'godfather-1',
-    title: 'I'm Gonna Make Him an Offer',
+    title: "I'm Gonna Make Him an Offer",
     movie: 'The Godfather',
     year: 1972,
     character: 'Don Vito Corleone',
