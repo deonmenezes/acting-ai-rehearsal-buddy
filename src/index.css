@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,10 +14,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 358 75% 37%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 43 74% 52%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
@@ -61,11 +62,11 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 358 75% 37%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 43 74% 52%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
@@ -96,6 +97,48 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-theater-dark text-white;
+  }
+}
+
+@layer components {
+  .theater-card {
+    @apply bg-black/50 border border-theater-gold/30 rounded-md shadow-lg backdrop-blur-sm;
+  }
+  
+  .script-line {
+    @apply p-4 rounded-md transition-all duration-300;
+  }
+  
+  .script-line.active {
+    @apply bg-theater-gold/20 border-l-4 border-theater-gold;
+  }
+  
+  .actor-line {
+    @apply font-semibold text-theater-gold;
+  }
+  
+  .other-character-line {
+    @apply text-gray-300;
+  }
+  
+  .score-badge {
+    @apply px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .score-excellent {
+    @apply bg-green-500/20 text-green-400 border border-green-500/30;
+  }
+  
+  .score-good {
+    @apply bg-blue-500/20 text-blue-400 border border-blue-500/30;
+  }
+  
+  .score-average {
+    @apply bg-yellow-500/20 text-yellow-400 border border-yellow-500/30;
+  }
+  
+  .score-poor {
+    @apply bg-red-500/20 text-red-400 border border-red-500/30;
   }
 }

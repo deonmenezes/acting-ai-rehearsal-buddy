@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,6 +53,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				theater: {
+					red: '#8B0000',
+					gold: '#D4AF37',
+					curtain: '#9b2226',
+					dark: '#1A0A0A',
+					light: '#F5F5DC'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +92,23 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-gold': {
+					'0%, 100%': { 
+						opacity: '1' 
+					},
+					'50%': { 
+						opacity: '0.6' 
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-gold': 'pulse-gold 2s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'theater-gradient': 'linear-gradient(to bottom, #1A0A0A, #321911)',
 			}
 		}
 	},
