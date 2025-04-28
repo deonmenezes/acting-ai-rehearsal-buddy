@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useToast } from "@/components/ui/use-toast";
 import Header from '@/components/Header';
@@ -10,7 +9,7 @@ import performanceAnalysisService from '@/services/performanceAnalysisService';
 import { scriptData } from '@/data/scriptData';
 import { Toaster } from '@/components/ui/toaster';
 import { Button } from '@/components/ui/button';
-import { Film, Star } from 'lucide-react';
+import { Film, Star, Mic } from 'lucide-react';
 
 const Index = () => {
   const { toast } = useToast();
