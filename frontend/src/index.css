@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -97,7 +96,7 @@
   }
 
   body {
-    @apply bg-theater-dark text-white;
+    @apply bg-theater-dark text-black;
   }
 }
 
@@ -111,15 +110,15 @@
   }
   
   .script-line.active {
-    @apply bg-theater-gold/20 border-l-4 border-theater-gold;
+    @apply bg-theater-gold/30 border-l-4 border-theater-gold;
   }
   
   .actor-line {
-    @apply font-semibold text-theater-gold;
+    @apply font-semibold text-black;
   }
   
   .other-character-line {
-    @apply text-gray-300;
+    @apply text-black font-medium;
   }
   
   .score-badge {

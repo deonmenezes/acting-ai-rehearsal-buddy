@@ -7,9 +7,26 @@ export interface ScriptData {
   year: number;
   character: string;
   lines: ScriptLine[];
+  videoUrl?: string; // Added for reference video
 }
 
 export const scriptData: ScriptData[] = [
+  {
+    id: 'don-dialogue-1',
+    title: "Don Ko Pakadna Mushkil Hi Nahin, Namumkin Hai",
+    movie: 'Don',
+    year: 1978,
+    character: 'Don',
+    videoUrl: '/AMITABH%20BACHAN%20ORIGINAL%20DON%20DIALOGUE%20MOVIE%20DON%20KO%20PAKADNA%20MUSHKIL%20HI%20NAHI%20NAMUMKIN%20HAI.mp4',
+    lines: [
+      {
+        id: '1',
+        character: 'Don',
+        text: "Don ko pakadna mushkil hi nahin, namumkin hai!",
+        isUserCharacter: true
+      }
+    ]
+  },
   {
     id: 'godfather-1',
     title: "I'm Gonna Make Him an Offer",
