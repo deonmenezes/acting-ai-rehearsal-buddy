@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Clapperboard, Menu, X, Video } from 'lucide-react';
+import { Clapperboard, Menu, X, Video, Images } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from './ui/button';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -29,6 +29,12 @@ const Header: React.FC = () => {
               <span className="flex items-center">
                 <Video className="h-4 w-4 mr-1" />
                 Facial Expressions
+              </span>
+            </Link>
+            <Link to="/image-comparison" className={`transition duration-300 ${isActive('/image-comparison') ? 'text-theater-gold font-medium' : 'text-gray-300 hover:text-theater-gold'}`}>
+              <span className="flex items-center">
+                <Images className="h-4 w-4 mr-1" />
+                Compare Actors
               </span>
             </Link>
             <Link to="/about" className={`transition duration-300 ${isActive('/about') ? 'text-theater-gold font-medium' : 'text-gray-300 hover:text-theater-gold'}`}>About</Link>
@@ -68,6 +74,7 @@ const Header: React.FC = () => {
                   { path: '/how-it-works', label: 'How It Works' },
                   { path: '/scripts', label: 'Script Library' },
                   { path: '/facial-expression', label: 'Facial Expressions', icon: <Video className="h-4 w-4 mr-2" /> },
+                  { path: '/image-comparison', label: 'Compare Actors', icon: <Images className="h-4 w-4 mr-2" /> },
                   { path: '/about', label: 'About' },
                 ].map((item) => (
                   <motion.div

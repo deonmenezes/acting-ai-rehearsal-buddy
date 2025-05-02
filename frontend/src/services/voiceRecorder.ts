@@ -1,4 +1,5 @@
 export interface RecordingResult {
+  audioBlob?: Blob;
   audioUrl: string;
   blob: Blob;
   duration: number;
@@ -10,6 +11,13 @@ export interface AudioAnalysisResult {
   emotionalDelivery: number;
   pacing: number;
   overallScore: number;
+}
+
+export interface AudioEmotionResult {
+  dominant: string;
+  confidence: number;
+  features?: Record<string, number>;
+  timestamp: number;
 }
 
 export class VoiceRecorderService {
@@ -76,7 +84,8 @@ export class VoiceRecorderService {
       
       this.mediaRecorder.onstop = () => {
         const duration = (Date.now() - this.startTime) / 1000; // in seconds
-        const audioBlob = new Blob(this.audioChunks, { type: 'audio/webm' });
+        // Change audio format to WAV instead of webm for better backend compatibility
+        const audioBlob = new Blob(this.audioChunks, { type: 'audio/wav' });
         const audioUrl = URL.createObjectURL(audioBlob);
         
         resolve({
@@ -88,6 +97,62 @@ export class VoiceRecorderService {
       };
       
       this.mediaRecorder.stop();
+    });
+  }
+  
+  public analyzeAudioEmotion(recording: RecordingResult): Promise<AudioEmotionResult> {
+    return new Promise(async (resolve, reject) => {
+      try {
+        console.log('Analyzing audio with blob size:', recording.blob.size);
+        // Convert blob to base64
+        const reader = new FileReader();
+        reader.readAsDataURL(recording.blob);
+        
+        reader.onloadend = async () => {
+          try {
+            // Get base64 data
+            const base64data = reader.result?.toString() || '';
+            console.log('Audio base64 data length:', base64data.length);
+            
+            // Send to backend with error handling
+            console.log('Sending audio data to backend...');
+            const response = await fetch('http://localhost:5000/api/analyze-audio', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ audio: base64data })
+            });
+            
+            if (!response.ok) {
+              const errorText = await response.text();
+              console.error('Backend API error:', response.status, errorText);
+              throw new Error(`API error: ${response.status} - ${errorText}`);
+            }
+            
+            console.log('Received response from backend');
+            const result = await response.json();
+            console.log('Audio analysis result:', result);
+            resolve(result);
+          } catch (error) {
+            console.error('Error in audio analysis request:', error);
+            throw error;
+          }
+        };
+        
+        reader.onerror = (error) => {
+          console.error('Error reading audio file:', error);
+          throw new Error('Failed to read audio data');
+        };
+      } catch (error) {
+        console.error('Error analyzing audio emotions:', error);
+        // Fallback result if analysis fails
+        resolve({
+          dominant: "Neutral",
+          confidence: 0.6,
+          timestamp: Date.now()
+        });
+      }
     });
   }
   

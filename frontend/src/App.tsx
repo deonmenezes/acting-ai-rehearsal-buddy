@@ -8,6 +8,7 @@ import HowItWorks from "./pages/HowItWorks";
 import About from "./pages/About";
 import GetStarted from "./pages/GetStarted";
 import FacialExpression from "./pages/FacialExpression";
+import ImageComparison from "./pages/ImageComparison";
 import DialogueRehearsal from "./pages/DialogueRehearsal";
 import NotFound from "./pages/NotFound";
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/get-started" element={<GetStarted />} />
           <Route path="/facial-expression" element={<FacialExpression />} />
+          <Route path="/image-comparison" element={<ImageComparison />} />
           <Route path="/dialogue-rehearsal/:id" element={<DialogueRehearsal />} />
           <Route path="/dialogue-rehearsal" element={<DialogueRehearsal />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
