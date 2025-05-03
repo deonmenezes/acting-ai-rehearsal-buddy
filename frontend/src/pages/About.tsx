@@ -88,6 +88,39 @@ const About = () => {
               <div className="w-32 h-32 bg-gray-700 rounded-full mx-auto mb-4 overflow-hidden">
                 <img src="/placeholder.svg" alt="Team member" className="w-full h-full object-cover" />
               </div>
+              <h3 className="text-xl font-semibold text-theater-gold mb-2">Deon Menezes</h3>
+              <p className="text-gray-400 mb-3">Lead Developer</p>
+              <p className="text-gray-300 text-sm">
+                Full-stack developer specializing in AI-powered applications and interactive user experiences.
+              </p>
+            </div>
+            
+            <div className="theater-card p-6 text-center">
+              <div className="w-32 h-32 bg-gray-700 rounded-full mx-auto mb-4 overflow-hidden">
+                <img src="/placeholder.svg" alt="Team member" className="w-full h-full object-cover" />
+              </div>
+              <h3 className="text-xl font-semibold text-theater-gold mb-2">Arshdeep Singh Kohli</h3>
+              <p className="text-gray-400 mb-3">Presentation & Documentation</p>
+              <p className="text-gray-300 text-sm">
+                Specializes in creating comprehensive presentations and documentation to communicate complex technical ideas.
+              </p>
+            </div>
+            
+            <div className="theater-card p-6 text-center">
+              <div className="w-32 h-32 bg-gray-700 rounded-full mx-auto mb-4 overflow-hidden">
+                <img src="/placeholder.svg" alt="Team member" className="w-full h-full object-cover" />
+              </div>
+              <h3 className="text-xl font-semibold text-theater-gold mb-2">Aastha Rai</h3>
+              <p className="text-gray-400 mb-3">Developer & AI Specialist</p>
+              <p className="text-gray-300 text-sm">
+                Full-stack developer with expertise in machine learning models for facial expression and emotion analysis.
+              </p>
+            </div>
+            
+            <div className="theater-card p-6 text-center">
+              <div className="w-32 h-32 bg-gray-700 rounded-full mx-auto mb-4 overflow-hidden">
+                <img src="/placeholder.svg" alt="Team member" className="w-full h-full object-cover" />
+              </div>
               <h3 className="text-xl font-semibold text-theater-gold mb-2">Sarah Johnson</h3>
               <p className="text-gray-400 mb-3">Founder & Theater Director</p>
               <p className="text-gray-300 text-sm">
