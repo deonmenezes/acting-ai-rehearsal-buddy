@@ -24,19 +24,14 @@ const Header: React.FC = () => {
           <nav className="hidden md:flex items-center space-x-6">
             <Link to="/" className={`transition duration-300 ${isActive('/') ? 'text-theater-gold font-medium' : 'text-gray-300 hover:text-theater-gold'}`}>Home</Link>
             <Link to="/how-it-works" className={`transition duration-300 ${isActive('/how-it-works') ? 'text-theater-gold font-medium' : 'text-gray-300 hover:text-theater-gold'}`}>How It Works</Link>
-            <Link to="/scripts" className={`transition duration-300 ${isActive('/scripts') ? 'text-theater-gold font-medium' : 'text-gray-300 hover:text-theater-gold'}`}>Script Library</Link>
+
             <Link to="/facial-expression" className={`transition duration-300 ${isActive('/facial-expression') ? 'text-theater-gold font-medium' : 'text-gray-300 hover:text-theater-gold'}`}>
               <span className="flex items-center">
                 <Video className="h-4 w-4 mr-1" />
                 Facial Expressions
               </span>
             </Link>
-            <Link to="/image-comparison" className={`transition duration-300 ${isActive('/image-comparison') ? 'text-theater-gold font-medium' : 'text-gray-300 hover:text-theater-gold'}`}>
-              <span className="flex items-center">
-                <Images className="h-4 w-4 mr-1" />
-                Compare Actors
-              </span>
-            </Link>
+       
             <Link to="/about" className={`transition duration-300 ${isActive('/about') ? 'text-theater-gold font-medium' : 'text-gray-300 hover:text-theater-gold'}`}>About</Link>
             <Link to="/get-started">
               <Button className="bg-theater-red hover:bg-theater-red/80 text-white font-medium shadow-lg shadow-theater-red/20">Get Started</Button>
